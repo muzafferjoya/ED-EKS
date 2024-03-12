@@ -16,37 +16,37 @@ resource "aws_eks_cluster" "eks" {
 # Using Data Source to get all Avalablility Zones in Region
 data "aws_availability_zones" "available_zones" {}
 
-data "aws_ami" "ubuntu22" {
-   most_recent = true
-   owners      = ["amazon"]
+# data "aws_ami" "ubuntu22" {
+#    most_recent = true
+#    owners      = ["amazon"]
 
-  filter {
-    name   = "name"
-    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-*"]
-  }
+#   filter {
+#     name   = "name"
+#     values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-*"]
+#   }
 
-  filter {
-    name   = "virtualization-type"
-    values = ["hvm"]
-  }
-}
+#   filter {
+#     name   = "virtualization-type"
+#     values = ["hvm"]
+#   }
+# }
 
 
 # Creating kubectl server
-resource "aws_instance" "kubectl-server" {
-  ami                         = data.aws_ami.ubuntu22.id
-  key_name                    = var.key_name
-  instance_type               = var.instance_size
-  associate_public_ip_address = true
-  subnet_id                   = var.public_subnet_az1_id
-  vpc_security_group_ids      = [var.eks_security_group_id]
+# resource "aws_instance" "kubectl-server" {
+#   ami                         = data.aws_ami.ubuntu22.id
+#   key_name                    = var.key_name
+#   instance_type               = var.instance_size
+#   associate_public_ip_address = true
+#   subnet_id                   = var.public_subnet_az1_id
+#   vpc_security_group_ids      = [var.eks_security_group_id]
 
-  tags = {
-    Name = "${var.cluster_name}-kubectl"
-    Env  = var.env
-    Type = var.type
-  }
-}
+#   tags = {
+#     Name = "${var.cluster_name}-kubectl"
+#     Env  = var.env
+#     Type = var.type
+#   }
+# }
 
 # Creating Worker Node Group
 resource "aws_eks_node_group" "node-grp" {
