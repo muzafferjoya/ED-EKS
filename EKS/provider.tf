@@ -6,9 +6,9 @@ provider "aws" {
 # configure backend
 terraform {
   backend "s3" {
-    bucket         = "sunbirded-terraform"
+    bucket         = "sunbirded-dev-tfstate-bucket"
     key            = "eks.terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-state-lock-dynamodb"
+    dynamodb_table = "sunbirded-dev-tfstate-lock"
   }
 }

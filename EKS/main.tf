@@ -8,7 +8,7 @@ module "vpc" {
 
 # Creating security group
 module "security_groups" {
-  source       = "./modules/Security-groups"
+  source       = "./modules/SG"
   vpc_id       = module.vpc.vpc_id
   cluster_name = var.cluster_name
   ssh_access   = var.ssh_access
@@ -19,7 +19,7 @@ module "security_groups" {
 
 # Creating key pair
 module "key_pair" {
-  source   = "./modules/Key-Pair"
+  source   = "./modules/Key"
   key_name = var.key_name
 }
 

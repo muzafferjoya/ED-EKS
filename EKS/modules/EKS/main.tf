@@ -1,6 +1,6 @@
 # Creating EKS Cluster
 resource "aws_eks_cluster" "eks" {
-  name     = "AWS-EKS"
+  name     = "sunbird-ed-dev"
   role_arn = var.master_arn
 
   vpc_config {
@@ -16,51 +16,13 @@ resource "aws_eks_cluster" "eks" {
 # Using Data Source to get all Avalablility Zones in Region
 data "aws_availability_zones" "available_zones" {}
 
-# Fetching Ubuntu 20.04 AMI ID
-# data "aws_ami" "amazon_linux_2" {
-#   most_recent = true
-
-#   filter {
-#     name   = "name"
-#     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-#   }
-
-#   filter {
-#     name   = "virtualization-type"
-#     values = ["hvm"]
-#   }
-
-#   owners = ["471112579681"]
-# }
-
-# data "aws_ami" "ubuntu" {
-#   most_recent = true
-
-#   filter {
-#     name   = "name"
-#     values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
-#   }
-
-#   filter {
-#     name   = "virtualization-type"
-#     values = ["hvm"]
-#   }
-
-#   filter {
-#         name   = "architecture"
-#         values = ["x86_64"]
-#   }
-
-#   owners = ["471112579681"] # Canonical
-# }
-
-data "aws_ami" "linux" {
+data "aws_ami" "ubuntu22" {
    most_recent = true
    owners      = ["amazon"]
 
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-*"]
   }
 
   filter {
@@ -72,8 +34,7 @@ data "aws_ami" "linux" {
 
 # Creating kubectl server
 resource "aws_instance" "kubectl-server" {
-  ami                         = data.aws_ami.linux.id
-  #ami                         = i-080eec1fa93bc7c0c
+  ami                         = data.aws_ami.ubuntu22.id
   key_name                    = var.key_name
   instance_type               = var.instance_size
   associate_public_ip_address = true
