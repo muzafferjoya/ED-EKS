@@ -10,7 +10,7 @@ Before applying the Terraform configuration, you need to create an S3 bucket and
 
 ```bash
 ./create_backend.sh
-
+```
 
 ## Modules
 
