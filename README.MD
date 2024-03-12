@@ -29,11 +29,11 @@ cd EKS
 
 2. Update the variables.tf file with your desired configurations.
 
-3. Run 'terraform init' to initialize the working directory.
+3. Run `terraform init` to initialize the working directory.
 
-4. Run 'terraform plan' to see the execution plan.
+4. Run `terraform plan` to see the execution plan.
 
-5. Run 'terraform apply' to apply the changes and provision the EKS cluster on AWS.
+5. Run `terraform apply` to apply the changes and provision the EKS cluster on AWS.
 
 ### VPC (Virtual Private Cloud)
 
