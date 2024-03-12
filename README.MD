@@ -19,6 +19,21 @@ The repository is organized into the following modules:
 ### EKS (Elastic Kubernetes Service)
 
 This module contains Terraform configuration files for setting up an EKS cluster on AWS.
+To launch an EKS cluster, follow these steps:
+
+1. Navigate to the EKS folder:
+
+```bash
+cd EKS
+```
+
+2. Update the variables.tf file with your desired configurations.
+
+3. Run terraform init to initialize the working directory.
+
+4. Run terraform plan to see the execution plan.
+
+5. Run terraform apply to apply the changes and provision the EKS cluster on AWS.
 
 ### VPC (Virtual Private Cloud)
 
@@ -35,17 +50,6 @@ The Key Pair module includes Terraform configuration files for managing key pair
 ### IAM (Identity and Access Management)
 
 The IAM module contains Terraform configuration files for managing AWS Identity and Access Management resources such as users, groups, and policies.
-
-## Getting Started
-
-To use these Terraform modules, follow these steps:
-
-1. Clone the repository to your local machine.
-2. Navigate to the specific module directory you want to work with.
-3. Update the variables.tf file with your desired configurations.
-4. Run `terraform init` to initialize the working directory.
-5. Run `terraform plan` to see the execution plan.
-6. Run `terraform apply` to apply the changes and provision the resources on AWS.
 
 ## Contributors
 
