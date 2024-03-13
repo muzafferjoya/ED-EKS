@@ -9,7 +9,6 @@ BUCKET_NAME="sunbirded-${environment}-tfstate-bucket"
 DYNAMODB_TABLE_NAME="sunbirded-${environment}-tfstate-lock"
 
 # Create S3 bucket
-#aws s3api create-bucket --bucket $BUCKET_NAME --region $AWS_REGION --create-bucket-configuration LocationConstraint=$AWS_REGION
 aws s3api create-bucket --bucket $BUCKET_NAME --region $AWS_REGION
 
 # Enable versioning on S3 bucket

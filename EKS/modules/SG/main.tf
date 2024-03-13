@@ -1,4 +1,4 @@
-# Create Security Group for the EKS  
+# Create Security Group for the EKS Cluster
 resource "aws_security_group" "eks_security_group" {
   name   = "SH security group"
   vpc_id = var.vpc_id

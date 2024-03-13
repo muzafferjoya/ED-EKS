@@ -1,4 +1,4 @@
-# Creating IAM role for Master Node
+#Creating IAM role for Master Node
 resource "aws_iam_role" "master" {
   name = "EKS-Master"
 

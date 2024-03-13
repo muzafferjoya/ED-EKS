@@ -8,7 +8,7 @@ variable "type" {
   type = string
 }
 
-# Stack name
+# Cluster name
 variable "cluster_name" {
   type = string
 }

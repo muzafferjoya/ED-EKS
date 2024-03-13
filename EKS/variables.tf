@@ -1,4 +1,4 @@
-# Stack Name
+# Cluster Name
 variable "cluster_name" {
   type = string
 }

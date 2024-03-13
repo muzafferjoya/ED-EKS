@@ -10,7 +10,7 @@ variable "type" {
   description = "Type"
 }
 
-# Stack name
+# Cluster name
 variable "cluster_name" {
   type = string
   description = "Project Name"

@@ -1,4 +1,4 @@
-# IAM Wokrer Node Instance Profile 
+# IAM Worker Node Instance Profile 
 output "instance_profile" {
   value = aws_iam_instance_profile.worker.name
 }

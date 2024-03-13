@@ -31,7 +31,6 @@ data "aws_availability_zones" "available_zones" {}
 #   }
 # }
 
-
 # Creating kubectl server
 # resource "aws_instance" "kubectl-server" {
 #   ami                         = data.aws_ami.ubuntu22.id
