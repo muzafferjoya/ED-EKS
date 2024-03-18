@@ -52,10 +52,3 @@ The Key Pair module includes Terraform configuration files for managing key pair
 
 The IAM module contains Terraform configuration files for managing AWS Identity and Access Management resources such as users, groups, and policies.
 
-## Contributors
-
-- [Muzaffar khan](https://github.com/muzafferjoya/sunbird-ed-aws)
-
-Feel free to contribute by submitting a pull request or opening an issue if you encounter any problems.
-
-Happy Terraforming!
